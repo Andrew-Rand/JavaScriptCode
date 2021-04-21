@@ -1,0 +1,94 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: black;
+}
+
+.clock{
+    /*все в часах центрируй по центру!! размер 300 - 400 пикс*/
+    width: 350px;
+    height: 350px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: url(clock.png);
+    background-size: cover; /*чтобы центрировать*/
+    
+}
+
+.clock::before{
+    content: "";
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background-color:wheat;
+    border-radius: 50%;
+    z-index: 999;  /*центральный кружо кидаем выше всего остального*/
+
+}
+
+.clock .hour,
+.clock .minute,
+.clock .second{
+    position: absolute;
+}
+
+.clock .hour, .hr{
+    width: 100px;
+    height: 100px;
+}
+
+.clock .minute, .mn{
+    width: 140px;
+    height: 140px;
+}
+
+.clock .second, .sc{
+    width: 200px;
+    height: 200px;
+}
+
+.hr, .mn, .sc{
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    border-radius: 50%;
+}
+
+.hr::before{
+    content: "";
+    position: absolute;
+    width: 8px;
+    height: 60px;
+    background-color: rgb(40, 81, 216);
+    z-index: 10;
+
+}
+
+.mn::before{
+    content: "";
+    position: absolute;
+    width: 4px;
+    height: 80px;
+    background-color: white;
+    z-index: 11;
+
+}
+
+.sc::before{
+    content: "";
+    position: absolute;
+    width: 2px;
+    height: 120px;
+    background-color:red;
+    z-index: 12;
+
+}
